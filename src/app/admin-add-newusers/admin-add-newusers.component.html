@@ -1,0 +1,221 @@
+<!--ADD New user to admin-->
+<app-nav-bar-admin></app-nav-bar-admin>
+<div class="container" id="box2">
+  <form #addmemberForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="parent1">
+      <div>
+        <label for="login"><h2>Add User</h2></label>
+      </div>
+      <div class="form-group">
+        <label for="accountNumber">Account Number</label>
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Enter accountNumber"
+          id="accountNumber"
+          [(ngModel)]="credentials.accountNumber"
+          name="accountNumber"
+          pattern="[0-9]{11}"
+          ngModel
+          required
+          #accountnumber="ngModel"
+        />
+        <small
+          class="form-text text-muted"
+          *ngIf="
+            accountnumber.touched &&
+            accountnumber.invalid &&
+            accountnumber.errors?.pattern
+          "
+          >Acount number can't be empty.It should be of 11 digits.</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter firstname"
+          id="firstName"
+          [(ngModel)]="credentials.firstName"
+          name="firstName"
+          ngModel
+          required
+          #firstName="ngModel"
+        />
+        <small
+          class="form-text text-muted"
+          *ngIf="firstName.touched && firstName.invalid"
+          >First Name can't be empty</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="accountNo">Last Name:</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter lastname"
+          id="lastname"
+          [(ngModel)]="credentials.lastName"
+          name="lastName"
+          ngModel
+          required
+          #lastName="ngModel"
+        />
+        <small
+          class="form-text text-muted"
+          *ngIf="lastName.touched && lastName.invalid"
+          >Last Name can't be empty</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="typeofAccount">Type Of Account:</label>
+        <input
+          [(ngModel)]="credentials.typeOfAaccount"
+          name="typeOfAaccount"
+          type="text"
+          class="form-control"
+          placeholder="Enter type of account"
+          id="typeOfAaccount"
+          ngModel
+          required
+          #typeOfAaccount="ngModel"
+        />
+        <small
+          class="form-text text-muted"
+          *ngIf="typeOfAaccount.touched && typeOfAaccount.invalid"
+          >Type of Account can't be empty</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number:</label>
+        <input
+          type="number"
+          class="form-control"
+          [(ngModel)]="credentials.phoneNumber"
+          name="phoneNumber"
+          placeholder="Enter phone no"
+          id="phoneNumber"
+          pattern="[7-9][0-9]{9}"
+          ngModel
+          required
+          #phoneNumber="ngModel"
+        />
+        <small
+          class="form-text text-muted"
+          *ngIf="
+            phoneNumber.touched &&
+            phoneNumber.invalid &&
+            phoneNumber.errors?.pattern
+          "
+          >Phone Number can't be empty.It should be of 10 digits.</small
+        >
+      </div>
+    </div>
+    <div class="parent2">
+      <div class="form-group">
+        <label for="atmPin">ATM PIN:</label>
+        <input
+          type="number"
+          class="form-control"
+          [(ngModel)]="credentials.atmPin"
+          name="atmPin"
+          placeholder="Enter ATM PIN"
+          id="atmPin"
+          pattern="[0-9]{4}"
+          ngModel
+          required
+          #atmPin="ngModel"
+        />
+        <small
+          class="form-text text-muted"
+          *ngIf="atmPin.touched && atmPin.invalid && atmPin.errors?.pattern"
+          >ATM Pin can't be empty.It should be of 4 digits.</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="balance">Balance:</label>
+        <input
+          type="number"
+          class="form-control"
+          [(ngModel)]="credentials.balance"
+          name="balance"
+          placeholder="Enter balance"
+          id="balance"
+          ngModel
+          required
+          #balance="ngModel"
+        />
+        <small
+          class="form-text text-muted"
+          *ngIf="balance.touched && balance.invalid"
+          >Balance can't be empty</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="dob">DOB:</label>
+        <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="credentials.dOB"
+          name="dOB"
+          placeholder="Enter dob"
+          id="dOB"
+          ngModel
+          required
+          #dOB="ngModel"
+        />
+        <small class="form-text text-muted" *ngIf="dOB.touched && dOB.invalid"
+          >DOB can't be empty</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="homeBranch">Home Branch:</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="credentials.homeBranch"
+          name="homeBranch"
+          placeholder="Enter home branch"
+          id="homeBranch"
+          ngModel
+          required
+          #balance="ngModel"
+        />
+        <small
+          class="form-text text-muted"
+          *ngIf="balance.touched && balance.invalid"
+          >Home Branch can't be empty</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="dobofOpen">Date Of Opening:</label>
+        <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="credentials.dateOfOpening"
+          name="dateOfOpening"
+          placeholder="Enter date of opening"
+          id="dateOfOpening"
+          ngModel
+          required
+          #dOB="ngModel"
+        />
+        <small class="form-text text-muted" *ngIf="dOB.touched && dOB.invalid"
+          >Date Of Opening can't be empty</small
+        >
+      </div>
+      <div class="parent">
+        <div class="child">
+          <button
+            type="submit"
+            [disabled]="!addmemberForm.valid"
+            class="btn btn-primary"
+          >
+            Add New Member
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

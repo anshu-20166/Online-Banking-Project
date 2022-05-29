@@ -1,0 +1,43 @@
+<!--to display ATM Pin of user-->
+<app-navbar></app-navbar>
+<form #pinForm="ngForm">
+  <div class="parent1">
+    <div class="form-group">
+      <i class="material-icons prefix">account_circle</i>
+      <label for="accountnumber">Enter Account Number :</label>
+      <input
+        [(ngModel)]="pinInput.accountNumber"
+        type="number"
+        name="accountnumber"
+        class="form-control"
+        id="accountnumber"
+        placeholder="Enter Account Number"
+        pattern="[0-9]{11}"
+        ngModel
+        required
+        #accountnumber="ngModel"
+      />
+      <h5
+        class="form-text text-muted"
+        *ngIf="accountnumber.touched && accountnumber.errors?.pattern"
+      >
+        Enter valid accountNo.It should be of 11 digits
+      </h5>
+    </div>
+    <p *ngIf="pin == 0">"Enter correct Account Number"</p>
+    <p *ngIf="pin && pin != 0">Your ATM PIN is : {{ pin }}</p>
+    <br />
+    <div id="box">
+      <button
+        class="btn btn-danger"
+        [disabled]="!pinForm.valid"
+        (click)="onShowPin()"
+      >
+        Show ATM PIN
+      </button>
+    </div>
+  </div>
+</form>
+
+<router-outlet></router-outlet>
+<app-footer></app-footer>

@@ -1,0 +1,47 @@
+<!--admin help desk displays all username and issues -->
+<app-nav-bar-admin></app-nav-bar-admin>
+<head> </head>
+<div class="container parent1">
+  <table
+    class="table table-striped"
+    *ngIf="feedback && feedback.length > 0; else elseBlock"
+  >
+    <thead>
+      <tr>
+        <th>Account Number</th>
+        <th>USERNAME</th>
+        <th>ISSUE</th>
+        <th>STATUS(press button to change status)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of feedback" style="text-align: center">
+        <td>{{ u.loginDetails.userDetails.accountNumber }}</td>
+        <td>{{ u.loginDetails.userName }}</td>
+        <td>{{ u.feedback }}</td>
+        <!--button for changing the status of the feedback -->
+        <td
+          class="btn btn-danger"
+          *ngIf="u.status == false; else elseStatus"
+          (click)="changeStatus(u.feedbackId)"
+        >
+          UNSOLVED
+        </td>
+        <ng-template #elseStatus>
+          <td
+            class="btn btn-success"
+            *ngIf="u.status == true"
+            (click)="changeStatus(u.feedbackId)"
+          >
+            SOLVED
+          </td>
+        </ng-template>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #elseBlock>
+    <h4 text-align="center">There are no feedback to display.</h4>
+  </ng-template>
+</div>
+<div></div>
+<router-outlet></router-outlet>

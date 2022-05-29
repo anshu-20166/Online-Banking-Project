@@ -1,0 +1,37 @@
+.appname{
+    height: 5px;
+    width: 100%;
+    text-align: center;
+}
+.img{
+
+    height:100%;
+    width: 100%;
+    background: url(../assets/Online-banking.jpg);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=80);
+    opacity: 0.90;
+    -khtml-opacity: 0.5;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: absolute;
+}
+#particles-js{
+    height:80vh;
+  width: 100%;
+  /*background:url(../img/img.jpg);*/
+  /*background: url('../images/header.jpg') no-repeat center center; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+ .box4{
+    
+    margin: 0;
+  position: relative;
+    
+ } 

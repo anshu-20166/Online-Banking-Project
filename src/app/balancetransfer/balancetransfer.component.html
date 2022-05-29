@@ -1,0 +1,82 @@
+<!--To transfer balance from one account to another-->
+<app-navbar></app-navbar>
+<form #balanceForm="ngForm">
+  <div class="parent1">
+    <div class="form-group">
+      <label for="accountnumber1">Sender's Account Number :</label>
+      <input
+        [(ngModel)]="fundInput.accountNumber1"
+        type="number"
+        name="accountnumber1"
+        class="form-control"
+        id="accountnumber1"
+        placeholder="Enter Account Number"
+        pattern="[0-9]{11}"
+        ngModel
+        required
+        #accountnumber1="ngModel"
+      />
+
+      <h5
+        class="form-text text-muted"
+        *ngIf="accountnumber1.touched && accountnumber1.errors?.pattern"
+      >
+        Enter valid accountNo.It should be of 11 digits
+      </h5>
+    </div>
+    <div class="form-group">
+      <label for="accountnumber2">Receiver's Account Number :</label>
+      <input
+        [(ngModel)]="fundInput.accountNumber2"
+        type="number"
+        name="accountnumber2"
+        class="form-control"
+        id="accountnumber1"
+        placeholder="Enter Account Number"
+        pattern="[0-9]{11}"
+        ngModel
+        required
+        #accountnumber2="ngModel"
+      />
+
+      <h5
+        class="form-text text-muted"
+        *ngIf="accountnumber2.touched && accountnumber2.errors?.pattern"
+      >
+        Enter valid accountNo.It should be of 11 digits
+      </h5>
+    </div>
+    <div class="form-group">
+      <label for="amount">Enter Amount :</label>
+      <input
+        [(ngModel)]="fundInput.amount"
+        type="number"
+        name="amount"
+        class="form-control"
+        id="amount"
+        placeholder="Enter Amount"
+        ngModel
+        required
+        #amount="ngModel"
+      />
+      <small
+        class="form-text text-muted"
+        *ngIf="amount.touched && amount.invalid"
+        >Amount can't be empty</small
+      >
+    </div>
+    <h4 *ngIf="value && value != 0 && value != -1">Transaction Successfull.</h4>
+    <h4 *ngIf="value == 0">Enter valid account Number</h4>
+    <h4 *ngIf="value == -1">Amount Exceeded</h4>
+    <br />
+    <div id="box">
+      <button
+        class="btn btn-danger"
+        [disabled]="!balanceForm.valid"
+        (click)="onSubmit()"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,25 @@
+<!--home display for the user-->
+<app-navbar></app-navbar>
+<div class="parent1">
+  <h5>Welcome {{ username }}</h5>
+  <!--for request to close account buuton-->
+  <div
+    class="btn btn-danger"
+    (click)="closeAccount()"
+    *ngIf="response == 0; else elseblock"
+  >
+    Request to close account
+  </div>
+  <ng-template #elseblock>
+    <div class="btn btn-danger">request sent</div>
+  </ng-template>
+</div>
+<div id="para">
+  <h3>Some information about bank</h3>
+  <p>
+    A web based banking system with all essential features and security
+    accompanied by a beautiful and simple website. The website is designed in
+    accordance with google material design and resposive web design guidelines
+    to ensure a seamless experience between devices.
+  </p>
+</div>

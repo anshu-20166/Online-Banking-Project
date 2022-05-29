@@ -1,0 +1,61 @@
+<!--to display the details of all users -->
+<app-nav-bar-admin></app-nav-bar-admin>
+<head> </head>
+<div class="container parent1">
+  <table
+    class="table table-striped"
+    *ngIf="users && users.length > 0; else elseBlock"
+  >
+    <thead>
+      <tr>
+        <th>Account Number</th>
+        <th>NAME</th>
+        <th>Type of Account</th>
+        <th>PHONE NUMBER</th>
+        <th>Home Branch</th>
+        <th>Balance</th>
+        <th>request to close account?</th>
+        <th>CLOSE ACCOUNT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of users" style="text-align: center">
+        <ng-template *ngIf="u.accountNumber == 0; else elseadmin">
+        </ng-template>
+        <ng-template #elseadmin>
+          <td>{{ u.accountNumber }}</td>
+          <td>{{ u.firstName }} {{ u.lastName }}</td>
+          <td>{{ u.typeOfAaccount }}</td>
+          <td>{{ u.phoneNumber }}</td>
+          <td>{{ u.homeBranch }}</td>
+          <td>{{ u.balance }}</td>
+          <td
+            *ngIf="u.closeAccount == 1; else elseclose"
+            class="btn btn-danger"
+          >
+            yes
+          </td>
+          <ng-template #elseclose>
+            <td class="btn btn-success btn1">No</td>
+          </ng-template>
+          <!-- delete button-->
+          <td *ngIf="u.closeAccount == 1; else elsedelete">
+            <a class="btn btn-warning" (click)="delete(u.accountNumber)"
+              >DELETE</a
+            >
+          </td>
+          <ng-template #elsedelete>
+            <td><a class="btn btn-warning" disabled>DELETE</a></td>
+          </ng-template>
+          <td></td>
+        </ng-template>
+      </tr>
+    </tbody>
+  </table>
+  <!--when there is no user data available-->
+  <ng-template #elseBlock>
+    <h4 align-text="center">
+      There are no Users to display,please add the Users!
+    </h4>
+  </ng-template>
+</div>

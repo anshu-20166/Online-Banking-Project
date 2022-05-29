@@ -1,0 +1,67 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+<script src="js/javascript.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<div class="appname jumbotron" style="margin-bottom:0 ">Banking App</div>
+<div class="img">
+  <nav class=" header1 bg-dark ">
+    <!-- Brand/logo -->
+    <div class="nav-wrapper" style="border:none;">
+      <span class="logo">w<a href="#!" class="brand-logo left"><i
+            class="material-icons">language</i></a>&nbsp;&nbsp;&nbsp;&nbsp;rldBank</span>
+      <ul id="nav-mobile" class="right gap">
+        <li class="medium gap"><a routerLink="/login"><i class="left material-icons">person_pin</i>Login</a></li>
+        <li class="medium gap"><a routerLink="/register"><i class="left material-icons">person_add</i>Register</a></li>
+      </ul>
+    </div>
+    <!-- Links -->
+  </nav>
+  <div class="box">
+    <div class="z-depth-3 login-box">
+
+      <div class="row">
+        <form #loginForm="ngForm" action="" autocomplete="off" (ngSubmit)="onSubmit()">
+          <div class="center-1">
+            <label for="login">
+              <h3>Login</h3>
+            </label>
+            <div class=" input-field col s12 form-group">
+              <i class="material-icons prefix">account_circle</i>
+              <label for="username" style="color: white; font-size: 20px;">User Name:</label><br>
+              <input [(ngModel)]="credentials.username" style="color: white; font-size: 15px;" type="text"
+                name="userName" class="form-control" id="userName" placeholder="Enter username" ngModel required
+                #userName="ngModel" />
+              <small class="form-text text-muted" *ngIf="userName.touched && userName.invalid">Enter valid
+                username</small>
+            </div>
+            <div class="input-field col s12 form-group">
+              <i class="material-icons prefix">lock</i>
+              <label for="icon_telephone pwd" style="color: white; font-size: 20px;">Password:</label><br>
+              <input [(ngModel)]="credentials.password" type="password" style="color: white; font-size: 15px;"
+                name="password" class="form-control" placeholder="Enter password" id="pwd" ngModel required
+                #password="ngModel" />
+              <small class="form-text text-muted" *ngIf="password.touched && !password.valid">Enter password</small>
+
+            </div>
+            <div class="parent col s12">
+              <div class="wrapper child">
+                <button class="btn #000000" [disabled]="!loginForm.valid">&nbsp;Submit&nbsp;</button>
+              </div>
+              <div class="wrapper child">
+                <button class="btn #000000">&nbsp;Clear&nbsp;</button>
+              </div>
+            </div>
+            <span class="child1"><button class="btn #000000" routerLink="/register">&nbsp;New User&nbsp;</button></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- <app-footer></app-footer>
+<router-outlet></router-outlet> -->

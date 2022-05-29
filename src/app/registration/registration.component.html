@@ -1,0 +1,172 @@
+<!--for new registration of user-->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"
+/>
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+<script src="js/javascript.js"></script>
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<div class="appname jumbotron" style="margin-bottom: 0">Banking App</div>
+<div class="img">
+  <nav class="header1 bg-dark">
+    <!-- Brand/logo -->
+    <div class="nav-wrapper" style="border: none">
+      <span class="logo"
+        >w<a href="#!" class="brand-logo left"
+          ><i class="material-icons">language</i></a
+        >&nbsp;&nbsp;&nbsp;&nbsp;rldBank</span
+      >
+      <ul id="nav-mobile" class="right gap">
+        <li class="medium gap">
+          <a routerLink="/login"
+            ><i class="left material-icons">person_pin</i>Login</a
+          >
+        </li>
+        <li class="medium gap">
+          <a routerLink="/register"
+            ><i class="left material-icons">person_add</i>Register</a
+          >
+        </li>
+      </ul>
+    </div>
+    <!-- Links -->
+  </nav>
+  <div class="box">
+    <div class="z-depth-3 login-box">
+      <div class="row">
+        <form
+          #registerForm="ngForm"
+          action=""
+          autocomplete="off"
+          (ngSubmit)="onSubmit()"
+        >
+          <div class="center-1">
+            <label for="login">
+              <h3>New User</h3>
+            </label>
+            <div class="input-field col s12 form-group">
+              <i class="material-icons prefix">account_circle</i>
+              <label for="userName" style="color: white; font-size: 20px"
+                >User Name:</label
+              ><br />
+              <input
+                type="text"
+                class="form-control"
+                placeholder=""
+                style="color: white; font-size: 15px"
+                id="userName"
+                [(ngModel)]="credentials.userName"
+                name="userName"
+                ngModel
+                required
+                #userName="ngModel"
+              />
+              <small
+                class="form-text text-muted col s12"
+                *ngIf="userName.touched && userName.invalid"
+                >Enter valid userName</small
+              >
+            </div>
+            <div class="input-field col s12 form-group">
+              <i class="material-icons prefix">account_balance</i>
+              <label for="accountNo" style="color: white; font-size: 20px"
+                >Account Number:</label
+              ><br />
+              <input
+                type="number"
+                class="form-control"
+                placeholder=""
+                style="color: white; font-size: 15px"
+                id="accno"
+                [(ngModel)]="credentials.accountNo"
+                name="accountNo"
+                pattern="[0-9]{11}"
+                ngModel
+                required
+                #accountNo="ngModel"
+              />
+              <small
+                class="form-text text-muted"
+                *ngIf="accountNo.touched && accountNo.invalid"
+                >Account Number can't be empty</small
+              >
+              <small
+                class="form-text text-muted"
+                *ngIf="accountNo.touched && accountNo.errors?.pattern"
+                >Enter valid accountNo</small
+              >
+            </div>
+            <div class="input-field col s12 form-group">
+              <i class="material-icons prefix">lock</i>
+              <label for="cpwd" style="color: white; font-size: 20px"
+                >Create Password:</label
+              ><br />
+              <input
+                [(ngModel)]="credentials.password"
+                name="password"
+                type="password"
+                class="form-control"
+                placeholder=""
+                id="cpwd"
+                ngModel
+                required
+                #password="ngModel"
+                style="color: white; font-size: 15px"
+              />
+              <small
+                class="form-text text-muted"
+                *ngIf="password.touched && password.invalid"
+                >Enter valid password</small
+              >
+            </div>
+            <div class="input-field col s12 form-group">
+              <i class="material-icons prefix">lock</i>
+              <label for="rpwd" style="color: white; font-size: 20px"
+                >Confirm Password:</label
+              ><br />
+              <input
+                type="password"
+                class="form-control"
+                [(ngModel)]="credentials.password2"
+                name="password2"
+                placeholder=""
+                id="rpwd"
+                ngModel
+                required
+                #password2="ngModel"
+                style="color: white; font-size: 15px"
+              />
+              <small
+                class="form-text text-muted"
+                *ngIf="password2.touched && password2.invalid"
+                >Enter same password</small
+              >
+            </div>
+            <div class="col s12">
+              <div class="wrapper">
+                <button class="btn #000000" [disabled]="!registerForm.valid">
+                  &nbsp;Register&nbsp;
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

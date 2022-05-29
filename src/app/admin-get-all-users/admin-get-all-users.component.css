@@ -1,0 +1,21 @@
+.parent1 {
+    /*background-color: black;*/
+    height:50%;
+    width:70%;
+    bottom: 500px;
+    margin-left:20%;
+    background-color: black;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=80);
+    opacity: 0.80;
+    -khtml-opacity: 0.5;
+    color: white;
+    position: relative;
+    padding-left: 30px;
+}
+th,td{
+    color:white;
+}
+.btn1{
+    margin-top: 10px;
+}

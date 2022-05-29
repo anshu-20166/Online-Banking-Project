@@ -1,0 +1,44 @@
+.parent1{
+    height: 600px;
+    width:25%;
+    top: 30%;
+    margin-left:10%;
+    background-color: black;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=80);
+    opacity: 0.80;
+    -khtml-opacity: 0.5;
+    color: white;
+    position: absolute;
+    padding-left: 30px;
+}
+.parent2{
+    height: 600px;
+    width:25%;
+    top: 30%;
+    margin-left:50%;
+    background-color: black;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=80);
+    opacity: 0.80;
+    -khtml-opacity: 0.5;
+    color: white;
+    position: absolute;
+    padding-left: 30px;
+    color: white;
+}
+label{
+    color: white;
+    font-size: 20px;
+}
+input{
+    padding: 6px;
+    font-size: 14px;
+    border-radius: 4px;
+    color:rgb(252, 250, 250);
+   
+}
+input.ng-touched.ng-invalid{
+    border-color:red;
+    border-width:1 px;
+}

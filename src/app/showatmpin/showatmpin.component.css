@@ -1,0 +1,27 @@
+.parent1 {
+    /*background-color: black;*/
+    height: 30%;
+    width:25%;
+    top: 40%;
+    margin-left:50%;
+    background-color: black;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=80);
+    opacity: 0.80;
+    -khtml-opacity: 0.5;
+    color: white;
+    position: absolute;
+    padding-left: 30px;
+}
+label{
+    padding-top: 20px;
+    font-size: 20px;
+    color:white;
+}
+input{
+    color:white;
+}
+input.ng-touched.ng-invalid{
+    border-color:red;
+    border-width:1 px;
+}

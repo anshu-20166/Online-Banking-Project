@@ -1,0 +1,19 @@
+.header1 {
+    /*background-color: black;*/
+    background-color: rgba(0, 0, 0, 0);
+    /*opacity: 0.4;*/
+    /*Opacity end*/
+    color: white;
+    position: relative;
+    bottom: 600px;
+}
+.gap{
+	margin-left: 12px;
+}
+.logo{
+    font-size: 20px;
+}
+.btn{
+    color: white;
+    background-color: brown;
+}

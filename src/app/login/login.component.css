@@ -1,0 +1,74 @@
+.header1 {
+    /*background-color: black;*/
+    bottom:750px;
+    background-color: rgba(0, 0, 0, 0);
+    /*opacity: 0.4;*/
+    /*Opacity end*/
+    color: white;
+    position: relative;
+}
+.gap{
+	margin-left: 12px;
+}
+.logo{
+    font-size: 20px;
+}
+h3{
+    margin-left: 150px;
+}
+.box {
+    /*background-color: black;*/
+    max-width:450px;
+    top: 30%;
+    margin-left:50%;
+    background-color: black;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=80);
+    opacity: 0.80;
+    -khtml-opacity: 0.5;
+    color: white;
+    position: absolute;
+}
+
+.login-box{
+	height: auto;
+	padding: 10px;
+
+}
+
+.center-1{
+	/*padding: 10px;*/
+	margin: 10px;
+}
+
+
+.input-field{
+	margin-bottom: 8px;
+    color: white;
+    font-size: 20px;
+}
+
+
+.wrapper {
+    text-align: center;
+    width: 100%;
+}
+.parent{
+    display: flex;
+    flex-direction: row;
+}
+.child{
+    height: 15px;
+    margin: 30px;
+}
+.btn{
+    color: white;
+}
+.child1{
+    margin-left: 170px;
+}
+input.ng-touched.ng-invalid{
+    border-color:red;
+    border-width:1 px;
+}
+

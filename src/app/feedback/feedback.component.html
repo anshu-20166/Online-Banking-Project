@@ -1,0 +1,31 @@
+<!--to fill the feedback by user-->
+<app-navbar></app-navbar>
+<form #feedbackForm="ngForm">
+  <div class="parent1">
+    <div class="form-group">
+      <label for="feedback"><h5>Add Feedback:</h5></label>
+      <br />
+      <input
+        type="text"
+        name="feedback"
+        class="form-control"
+        id="feedback"
+        placeholder="Enter your experience or Issues here"
+        [(ngModel)]="credentials.feedback"
+        required
+      />
+    </div>
+
+    <br />
+    <h5 *ngIf="response && response == 1">Feedback successfully submitted.</h5>
+    <div id="box">
+      <button
+        class="btn btn-danger"
+        [disabled]="!feedbackForm.valid"
+        (click)="onSubmit()"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</form>

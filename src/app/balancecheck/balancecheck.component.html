@@ -1,0 +1,13 @@
+<!--display the balance of the user-->
+<app-navbar></app-navbar>
+<div class="parent1">
+  <div class="child">
+    <label>USER NAME:</label>&nbsp;&nbsp;<label>{{ username }}</label
+    ><br />
+    <h5>CURRENT BALANCE: {{ balance }}</h5>
+    <br />
+  </div>
+  <a class="navbar-brand btn btn-danger" (click)="balancecheck()"
+    >balancecheck</a
+  >
+</div>

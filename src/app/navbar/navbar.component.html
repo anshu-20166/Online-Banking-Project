@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<nav class=" header1 bg-dark ">
+  <div class="nav-wrapper" style="border:none;"> 
+    <span class="logo">w<a href="#!" class="brand-logo left"><i class="material-icons">language</i></a>&nbsp;&nbsp;&nbsp;&nbsp;rldBank</span>
+    <ul id="nav-mobile"  class="right gap">
+      <li class="medium gap"><a routerLink="/home" class="nav-item nav-link"><i class="left material-icons">home</i>HOME</a></li>
+      <li class="medium gap"><a routerLink="/accountview" class="nav-item nav-link">ACCOUNT VIEW</a></li>
+      <li class="medium gap"><a routerLink="/balancecheck" class="nav-item nav-link">BALANCE CHECK</a></li>
+      <li class="medium gap"><a routerLink="/showatmpin" class="nav-item nav-link">SHOW ATM PIN</a></li>
+      <li class="medium gap"><a routerLink="/feedback" class="nav-item nav-link">FEEDBACK</a></li>
+      <li class="medium gap"><a routerLink="/balancetransfer" class="nav-item nav-link">BALANCE TRANSFER</a></li>
+      <li class="medium gap"><a
+        class="btn "
+        (click)="logoutUser()"
+        >Logout</a
+      ></li>
+    </ul>
+  </div>
+</nav>
+
+   
+      
+
